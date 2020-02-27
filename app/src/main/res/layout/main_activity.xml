@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+~ *********************************************************************
+~ Created by Ghous Khan on 2020-02-27.
+~ Innovative Quest Ltd
+~ Copyright (C) Innovative Quest Ltd All Rights Reserved
+~ Any copying or reproduction of this software in strictly prohibited.
+~ *********************************************************************
+-->
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:ignore="MergeRootFrame"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/default_app_bar"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:layout_gravity="top"
+        android:elevation="8dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:id="@+id/default_toolbar"
+            android:clipToPadding="false"
+            app:contentInsetEnd="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetStart="0dp">
+
+            <include layout="@layout/home_action_bar"/>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+    <fragment
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        app:navGraph="@navigation/main"
+        app:defaultNavHost="true"
+        android:id="@+id/container"
+        android:layout_gravity="top"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</FrameLayout>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+~ *********************************************************************
+~ Created by Ghous Khan on 2020-02-27.
+~ Innovative Quest Ltd
+~ Copyright (C) Innovative Quest Ltd All Rights Reserved
+~ Any copying or reproduction of this software in strictly prohibited.
+~ *********************************************************************
+-->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="com.bumptech.glide.request.RequestListener"/>
+        <import type="com.innovativequest.checkfer_test_exercise.model.Resource" />
+        <import type="android.graphics.drawable.Drawable"/>
+
+
+        <variable
+            name="dataListItem"
+            type="com.innovativequest.checkfer_test_exercise.model.DataListItem" />
+
+
+        <variable
+            name="userResource"
+            type="com.innovativequest.checkfer_test_exercise.model.Resource" />
+
+        <variable
+            name="retryCallback"
+            type="com.innovativequest.checkfer_test_exercise.ui.common.RetryCallback" />
+
+        <variable
+            name="imageRequestListener"
+            type="com.bumptech.glide.request.RequestListener&lt;Drawable>" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/list_item_layout_height"
+        app:cardUseCompatPadding="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/avatar"
+                android:layout_height="match_parent"
+                android:layout_width="@dimen/list_item_layout_height"
+                app:imageUrl="@{dataListItem.profileImage}"
+                app:imageRequestListener="@{imageRequestListener}"
+                app:transitionName="@{dataListItem.name}"
+                android:contentDescription="@string/a11y_user_photo"
+                android:scaleType="centerCrop"
+                android:background="@mipmap/ic_launcher"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/avatar">
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/default_margin"
+                    android:layout_marginTop="16dp"
+                    style="@style/AppTheme.TextAppearance.BodyLight"
+                    android:text="@{dataListItem.name}"
+                    tools:text="display item name" />
+
+                <TextView
+                    android:id="@+id/desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/default_margin"
+                    android:layout_marginTop="8dp"
+                    style="@style/AppTheme.TextAppearance.BodyLight"
+                    android:text="@{dataListItem.type}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:text="this is some description more description more description" />
+
+                <TextView
+                    android:id="@+id/stars"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/default_margin"
+                    android:layout_marginTop="@dimen/default_margin"
+                    style="@style/AppTheme.TextAppearance.BodyLight"
+                    android:drawableStart="@android:drawable/btn_star"
+                    android:gravity="center"
+                    android:text="@{`` + dataListItem.ranking}"
+                    tools:text="5" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

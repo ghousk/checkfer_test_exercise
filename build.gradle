@@ -1,0 +1,30 @@
+//*********************************************************************
+// Created by Ghous Khan on 2020-02-27.
+// Innovative Quest Ltd
+// Copyright (C) Innovative Quest Ltd All Rights Reserved
+// Any copying or reproduction of this software in strictly prohibited.
+//*********************************************************************
+
+
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    apply from: 'versions.gradle'
+    addRepos(repositories)
+    dependencies {
+        classpath deps.android_gradle_plugin
+        classpath deps.kotlin.plugin
+        classpath deps.kotlin.allopen
+        classpath deps.navigation.safe_args_plugin
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    addRepos(repositories)
+}
+
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

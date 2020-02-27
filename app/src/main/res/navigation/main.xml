@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+~ *********************************************************************
+~ Created by Ghous Khan on 2020-02-27.
+~ Innovative Quest Ltd
+~ Copyright (C) Innovative Quest Ltd All Rights Reserved
+~ Any copying or reproduction of this software in strictly prohibited.
+~ *********************************************************************
+-->
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@+id/dataListItemsFragment">
+
+    <fragment
+        android:id="@+id/repoFragment"
+        android:name="com.innovativequest.checkfer_test_exercise.ui.detail.ItemDetailFragment"
+        android:label="RepoFragment">
+        <action
+            android:id="@+id/showUser"
+            app:destination="@id/dataListItemsFragment" />
+        <argument
+            android:name="userId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/dataListItemsFragment"
+        android:name="com.innovativequest.checkfer_test_exercise.ui.datalistitems.DataListItemsFragment"
+        android:label="DataListItemsFragment">
+        <action
+            android:id="@+id/showRepo"
+            app:destination="@id/repoFragment" />
+    </fragment>
+</navigation>

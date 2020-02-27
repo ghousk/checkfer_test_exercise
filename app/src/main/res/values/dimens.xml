@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+~ *********************************************************************
+~ Created by Ghous Khan on 2020-02-27.
+~ Innovative Quest Ltd
+~ Copyright (C) Innovative Quest Ltd All Rights Reserved
+~ Any copying or reproduction of this software in strictly prohibited.
+~ *********************************************************************
+-->
+
+<resources>
+    <dimen name="photo_size">64dp</dimen>
+    <dimen name="list_item_layout_height">120dp</dimen>
+    <dimen name="default_margin">8dp</dimen>
+    <dimen name="app_home_item_corner_radius">8dp</dimen>
+    <dimen name="detail_screen_iv_height">200dp</dimen>
+    <dimen name="text_fields_horizontal_padding">10dp</dimen>
+    <dimen name="detail_screen_body_text_horizontal_padding">10dp</dimen>
+</resources>
