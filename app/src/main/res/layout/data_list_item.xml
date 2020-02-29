@@ -36,115 +36,112 @@
             type="com.bumptech.glide.request.RequestListener&lt;Drawable>" />
     </data>
 
-    <androidx.cardview.widget.CardView
+
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/list_item_layout_container_height"
-        android:background="@color/app_white"
-        app:cardUseCompatPadding="true">
+        android:layout_marginTop="@dimen/list_item_margin_vertical"
+        android:layout_marginBottom="@dimen/list_item_margin_vertical"
+        android:background="@android:color/transparent">
 
-        <FrameLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="@dimen/list_item_layout_height"
+            android:layout_gravity="bottom"
             android:background="@color/app_white">
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/list_item_layout_height"
-                android:layout_gravity="bottom"
-                android:background="@color/app_white">
 
-                <ImageView
-                    android:id="@+id/avatar"
-                    android:layout_height="match_parent"
-                    android:layout_width="@dimen/list_item_layout_height"
-                    app:imageUrl="@{dataListItem.profileImage}"
-                    app:imageRequestListener="@{imageRequestListener}"
-                    app:transitionName="@{dataListItem.name}"
-                    android:contentDescription="@string/a11y_user_photo"
-                    android:scaleType="centerCrop"
-                    android:background="@mipmap/ic_launcher"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
+            <ImageView
+                android:id="@+id/avatar"
+                android:layout_height="match_parent"
+                android:layout_width="@dimen/list_item_layout_height"
+                app:imageUrl="@{dataListItem.profileImage}"
+                app:imageRequestListener="@{imageRequestListener}"
+                app:transitionName="@{dataListItem.name}"
+                android:contentDescription="@string/a11y_user_photo"
+                android:scaleType="centerCrop"
+                android:background="@mipmap/ic_launcher"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
 
-                <TextView
-                    android:id="@+id/name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/default_margin_regular"
-                    android:layout_marginTop="16dp"
-                    android:textAllCaps="false"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toTopOf="@id/desc"
-                    app:layout_constraintStart_toEndOf="@+id/avatar"
-                    style="@style/AppTheme.TextAppearance.H1Medium"
-                    android:text="@{dataListItem.name + ' ' + dataListItem.sirname}"
-                    tools:text="Michael" />
-
-                <TextView
-                    android:id="@+id/desc"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/default_margin_regular"
-                    android:layout_marginTop="8dp"
-                    android:textAllCaps="false"
-                    style="@style/AppTheme.TextAppearance.H3Light"
-                    android:text="@{dataListItem.type}"
-                    app:layout_constraintTop_toBottomOf="@id/name"
-                    app:layout_constraintStart_toEndOf="@+id/avatar"
-                    tools:text="Konstantenious" />
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/rankingTv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@{dataListItem.ranking}"
-                    style="@style/AppTheme.TextAppearance.H3Light"
-                    app:layout_constraintEnd_toStartOf="@id/smallArrow"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="@id/smallArrow"
-                    android:layout_marginEnd="@dimen/default_margin_regular"
-                    android:layout_marginStart="@dimen/default_margin_regular"
-                    android:gravity="center"
-                    android:drawableEnd="@drawable/ic_rating"
-                    android:drawablePadding="@dimen/default_margin_short"
-                    tools:text="4.8"/>
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/rateTv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@{String.format(@string/rate_format, dataListItem.rate)}"
-                    style="@style/AppTheme.TextAppearance.H2Light"
-                    android:textAllCaps="false"
-                    app:layout_constraintTop_toBottomOf="@id/rankingTv"
-                    app:layout_constraintEnd_toStartOf="@id/smallArrow"
-                    android:layout_marginTop="@dimen/default_margin_regular"
-                    android:layout_marginEnd="@dimen/default_margin_regular"
-                    android:layout_marginStart="@dimen/default_margin_regular"
-                    android:gravity="center"
-                    tools:text="£100/h"/>
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/smallArrow"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/ic_small_arrow"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    android:padding="@dimen/app_nav_buttons_padding"
-                    android:layout_marginEnd="@dimen/default_margin_regular"/>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/verifiedIv"
+            <TextView
+                android:id="@+id/name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="top|end"
-                android:layout_marginEnd="@dimen/default_margin_short"
-                android:src="@drawable/ic_verified_icon"/>
-        </FrameLayout>
+                android:layout_marginStart="@dimen/default_margin_regular"
+                android:layout_marginTop="16dp"
+                android:textAllCaps="false"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/desc"
+                app:layout_constraintStart_toEndOf="@+id/avatar"
+                style="@style/AppTheme.TextAppearance.H1Medium"
+                android:text="@{dataListItem.name + ' ' + dataListItem.sirname}"
+                tools:text="Michael" />
 
-    </androidx.cardview.widget.CardView>
+            <TextView
+                android:id="@+id/desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_margin_regular"
+                android:layout_marginTop="8dp"
+                android:textAllCaps="false"
+                style="@style/AppTheme.TextAppearance.H3Light"
+                android:text="@{dataListItem.type}"
+                app:layout_constraintTop_toBottomOf="@id/name"
+                app:layout_constraintStart_toEndOf="@+id/avatar"
+                tools:text="Konstantenious" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/rankingTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{dataListItem.ranking}"
+                style="@style/AppTheme.TextAppearance.H3Light"
+                app:layout_constraintEnd_toStartOf="@id/smallArrow"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/smallArrow"
+                android:layout_marginEnd="@dimen/default_margin_regular"
+                android:layout_marginStart="@dimen/default_margin_regular"
+                android:gravity="center"
+                android:drawableEnd="@drawable/ic_rating"
+                android:drawablePadding="@dimen/default_margin_short"
+                tools:text="4.8"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/rateTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{String.format(@string/rate_format, dataListItem.rate)}"
+                style="@style/AppTheme.TextAppearance.H2Light"
+                android:textAllCaps="false"
+                app:layout_constraintTop_toBottomOf="@id/rankingTv"
+                app:layout_constraintEnd_toStartOf="@id/smallArrow"
+                android:layout_marginTop="@dimen/default_margin_regular"
+                android:layout_marginEnd="@dimen/default_margin_regular"
+                android:layout_marginStart="@dimen/default_margin_regular"
+                android:gravity="center"
+                tools:text="£100/h"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/smallArrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_small_arrow"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:padding="@dimen/app_nav_buttons_padding"
+                android:layout_marginEnd="@dimen/default_margin_regular"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/verifiedIv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|end"
+            android:layout_marginEnd="@dimen/default_margin_short"
+            android:src="@drawable/ic_verified_icon"/>
+    </FrameLayout>
+
 </layout>

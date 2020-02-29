@@ -9,8 +9,9 @@
 
 <resources>
     <dimen name="photo_size">64dp</dimen>
-    <dimen name="list_item_layout_container_height">90dp</dimen>
+    <dimen name="list_item_layout_container_height">82dp</dimen>
     <dimen name="list_item_layout_height">80dp</dimen>
+    <dimen name="list_item_margin_vertical">2dp</dimen>
     <dimen name="default_margin_short">4dp</dimen>
     <dimen name="default_margin_regular">8dp</dimen>
     <dimen name="default_margin_long">12dp</dimen>
