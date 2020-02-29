@@ -5,5 +5,7 @@
     <color name="colorAccent">#ff4081</color>
 
     <color name="app_item_image_overlay">#80000000</color>
-    <color name="app_grey_2">#454545</color> <!-- Signup -->
+    <color name="app_grey_2">#454545</color>
+    <color name="app_grey_7">#ececec</color>
+    <color name="app_white">#FFFFFF</color>
 </resources>

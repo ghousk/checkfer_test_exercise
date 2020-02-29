@@ -16,5 +16,5 @@
     <string name="body_item5_fmt">Website : %s</string>
     <string name="body_item6_fmt">Account Id : %s</string>
     <string name="details_screen">Details Screen</string>
-
+    <string name="rate_format">£%.2f/h</string>
 </resources>

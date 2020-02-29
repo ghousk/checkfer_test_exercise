@@ -41,8 +41,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
+        android:layout_height="match_parent"
+        android:background="@color/app_grey_7">
 
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="0dp"
@@ -57,6 +57,7 @@
             android:layout_marginEnd="8dp"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="8dp"
+            android:background="@color/app_grey_7"
             tools:listitem="@layout/data_list_item" />
 
         <include
