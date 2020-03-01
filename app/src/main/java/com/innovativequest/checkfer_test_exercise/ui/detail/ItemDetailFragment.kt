@@ -37,6 +37,7 @@ import com.innovativequest.checkfer_test_exercise.ui.common.RetryCallback
 import com.innovativequest.checkfer_test_exercise.util.autoCleared
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
+import com.innovativequest.checkfer_test_exercise.util.Utils
 import javax.inject.Inject
 
 /**
@@ -116,7 +117,6 @@ class ItemDetailFragment : Fragment(), Injectable {
 
 
     private fun initItemDetail() {
-        binding.listItemIndex = 0
 
         itemDetailViewModel.dataListItemResponseById.observe(viewLifecycleOwner, Observer {
 
@@ -124,7 +124,8 @@ class ItemDetailFragment : Fragment(), Injectable {
             it?.data?.items?.let { listItems ->
                 for(dataListItem in listItems){
                     if(dataListItem.id == params.userId.toInt()){
-                        binding.listItemIndex = listItems.indexOf(dataListItem)
+                        binding.dataListItem = dataListItem
+                        binding.memberSinceDisplayString = Utils.getDateInDisplayableFormat(dataListItem.memberSince)
                         break
                     }
                 }

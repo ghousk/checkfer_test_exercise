@@ -9,7 +9,7 @@ import java.util.*
 object Utils {
 
     private val INPUT_DATE_FORMAT_FULL = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")
-    private val OUTPUT_DATE_FORMAT = SimpleDateFormat("dd MMMM yyyy")
+    private val OUTPUT_DATE_FORMAT = SimpleDateFormat("MMM yyyy")
 
 
     fun getDateInDisplayableFormat(inputDateStr: String?): String{

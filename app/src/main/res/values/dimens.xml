@@ -20,4 +20,7 @@
     <dimen name="text_fields_horizontal_padding">10dp</dimen>
     <dimen name="detail_screen_body_text_horizontal_padding">10dp</dimen>
     <dimen name="app_nav_buttons_padding">8dp</dimen>
+
+    <dimen name="item_detail_layout_container_height">122dp</dimen>
+    <dimen name="item_detail_layout_height">120dp</dimen>
 </resources>

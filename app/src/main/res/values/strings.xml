@@ -15,6 +15,15 @@
     <string name="body_item4_fmt">User Id : %s</string>
     <string name="body_item5_fmt">Website : %s</string>
     <string name="body_item6_fmt">Account Id : %s</string>
+
+    <string name="member_since_label_fmt">Member Since: %s</string>
+    <string name="av_response_time_label_fmt">Avg. Response Time: %d day</string>
     <string name="details_screen">Details Screen</string>
     <string name="rate_format">£%.2f/h</string>
+    <string name="verified_background">Verified Background</string>
+    <string name="rating">Rating</string>
+    <string name="reviews">Reviews</string>
+    <string name="ranking">Ranking</string>
+    <string name="description">Description</string>
+    <string name="another_info">Another Info</string>
 </resources>
